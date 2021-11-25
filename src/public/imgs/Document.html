@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/vendor/open-iconic-master/font/css/open-iconic-bootstrap.css">
+</head>
+
+<body>
+    <div class="app">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Hùng Nguyễn
+                    <img src="https://scr.vn/wp-content/uploads/2020/08/%E1%BA%A2nh-hot-girl-l%C3%A0m-avt.jpg" alt="avatar"
+                      class="user-avatar">
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item dropdown-item__layouts" href="courses/create">Summit course</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="me/stored/courses">Courses me</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>        <div class="container">
+            <form name="container-form" class="mt-4" method="POST" action="/courses/handle-form-actions">
+  <div>
+    <h3>Khoa hoc da dang</h3>
+    <a href="/me/trash/courses">Thung rac (0)</a>
+    <div class="mt-4 d-flex align-items-center">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+        <label class="form-check-label" for="checkbox-all">
+          Select all
+        </label>
+      </div>
+      <select class="form-control checkbox-select form-control-sm" name="action" required>
+        <option value="">Action</option>
+        <option value="delete">Delete</option>
+      </select>
+      <button class="btn btn-primary btn-sm disabled btn-check-all-submit">Apply</button>
+    </div>
+  </div>
+  <table class="table table-white">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">STT</th>
+        <th scope="col">Name course
+          <a href="?_sort&column=name&type=desc">
+                    <span class="oi oi-elevator"></span>
+                </a>
+        </th>
+        <th scope="col">Description</th>
+        <th scope="col">CreateAt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courseIds[]" value="619762ffb1458a5d64b07546">
+            <label class="form-check-label" for="defaultCheck1">
+            </label>
+          </div>
+        </td>
+        <th scope="row">1</th>
+        <td>PHP advanced</td>
+        <td>Nang cao</td>
+        <td>Fri Nov 19 2021 15:40:31 GMT+0700 (Indochina Time)</td>
+        <td><a href="/courses/619762ffb1458a5d64b07546/edit" class="btn btn-success">Modify</a></td>
+        <td><a href="" class="btn btn-danger" data-toggle="modal" data-id="619762ffb1458a5d64b07546"
+            data-target="#delete-course-modal">Delete</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courseIds[]" value="619f2a7eaa48600d097a9f16">
+            <label class="form-check-label" for="defaultCheck1">
+            </label>
+          </div>
+        </td>
+        <th scope="row">2</th>
+        <td>Nodejs full course</td>
+        <td>Fullstack </td>
+        <td>Thu Nov 25 2021 13:17:34 GMT+0700 (Indochina Time)</td>
+        <td><a href="/courses/619f2a7eaa48600d097a9f16/edit" class="btn btn-success">Modify</a></td>
+        <td><a href="" class="btn btn-danger" data-toggle="modal" data-id="619f2a7eaa48600d097a9f16"
+            data-target="#delete-course-modal">Delete</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="courseIds[]" value="619f494aecf7e42a613d789c">
+            <label class="form-check-label" for="defaultCheck1">
+            </label>
+          </div>
+        </td>
+        <th scope="row">3</th>
+        <td>Promise</td>
+        <td>su dung promise</td>
+        <td>Thu Nov 25 2021 15:28:58 GMT+0700 (Indochina Time)</td>
+        <td><a href="/courses/619f494aecf7e42a613d789c/edit" class="btn btn-success">Modify</a></td>
+        <td><a href="" class="btn btn-danger" data-toggle="modal" data-id="619f494aecf7e42a613d789c"
+            data-target="#delete-course-modal">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+
+
+<div id="delete-course-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delte course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>You want delete this course?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-course" type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form name="delete-course-form" method="POST"></form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // khai báo id , form, và modal  `
+    var containerForm = $('form[name="container-form"]')
+    var deleteForm = document.forms['delete-course-form'] // lấy element form thông qua name của form
+    var btnDeleteCourse = document.getElementById('btn-delete-course')
+    var courseId
+    var checkboxAll = $('#checkbox-all')
+    var courseItemCheckbox = $('input[name="courseIds[]"]')
+    var checkAllBtnSubmit = $('.btn-check-all-submit')
+    //when diago confirm click
+    $('#delete-course-modal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      courseId = button.data('id')
+    })
+    btnDeleteCourse.onclick = function () {
+      deleteForm.action = `/courses/${courseId}?_method=DELETE`;
+      deleteForm.submit()
+    }
+    //checkbox all click
+    checkboxAll.change(function () {
+      var isCheckedAll = $(this).prop('checked');
+      courseItemCheckbox.prop('checked', isCheckedAll)
+    })
+    // Courses item checked change
+    courseItemCheckbox.change(() => {
+      var isCheckedAll = courseItemCheckbox.length === $('input[name="courseIds[]"]:checked').length
+      checkboxAll.prop('checked', isCheckedAll)
+      renderCheckedSubmitBtn()
+    })
+
+
+     checkAllBtnSubmit.click('submit', function (e) {
+      var isSubmitted = $(this).hasClass('disabled');
+
+      if (isSubmitted) {
+        e.preventDefault();
+      }
+    })
+
+
+    //Re render checked button
+    function renderCheckedSubmitBtn() {
+      var checkedCount = $('input[name="courseIds[]"]:checked').length
+      if (checkedCount > 0)  {
+        checkAllBtnSubmit.removeClass('disabled');
+      }
+      else {
+        checkAllBtnSubmit.addClass('disabled');
+      }
+    }
+  })
+
+</script>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
